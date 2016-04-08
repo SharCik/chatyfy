@@ -1,1 +1,0 @@
-$redis_onlines = Redis.new path: "/tmp/redis.sock", db: 15, driver: :hiredis

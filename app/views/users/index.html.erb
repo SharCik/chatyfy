@@ -24,6 +24,7 @@
                   <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
                               "data-sid" => current_user.id, "data-rip" => user.id %>
                 </td>
+                <td><%= image_tag user.picture.thumb.url %></td>
               </tr>
           <% end %>
 
@@ -38,7 +39,7 @@
     <div style="height: 400px; overflow-y: auto;">
       <% if @conversations.any? %>
           <ul class="media-list">
-            <% @conversations.each do |conversation| %>
+              <% @conversations.each do |conversation| %>
                 <li class="media">
                   <%= image_tag("http://placehold.it/50x50", class: "media-object pull-left") %>
                   <div class="media-body">
@@ -46,7 +47,6 @@
                         <p><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
                   </div>
                 </li>
-
             <% end %>
           </ul>
       <% else %>

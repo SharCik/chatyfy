@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+
+  resources :users
+  match '/profile_update',  to: 'users#update',            via: 'get'
+  match '/profile_edit',  to: 'users#edit',            via: 'get'
+  match '/profile',  to: 'users#show',            via: 'get'
+
   authenticated :user do
     root 'users#index'
   end
