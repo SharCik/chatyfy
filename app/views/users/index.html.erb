@@ -41,7 +41,9 @@
           <ul class="media-list">
               <% @conversations.each do |conversation| %>
                 <li class="media">
-                  <%= image_tag("http://placehold.it/50x50", class: "media-object pull-left") %>
+                <% user = User.where(id: conversation.sender_id) %>
+                <%= puts user %>
+                  <%= image_tag(user.first.picture.thumb.url, class: "media-object pull-left")  %>
                   <div class="media-body">
                          <h4 class="media-heading"><%= link_to conversation_interlocutor(conversation).name, conversation_path(conversation), class: "conversation", "data-cid" => conversation.id  %></h4>
                         <p><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
