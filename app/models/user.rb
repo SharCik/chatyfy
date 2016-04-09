@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
 
 
 
+  validates_presence_of   :picture
+  validates_integrity_of  :picture
+  validates_processing_of :picture
 end
