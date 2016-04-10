@@ -35,7 +35,7 @@ gem 'private_pub'
 gem 'thin'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'devise_lastseenable'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
